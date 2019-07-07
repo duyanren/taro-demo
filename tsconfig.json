@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "lib",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "rootDir": ".",
+    "jsx": "preserve",
+    "jsxFactory": "Taro.createElement",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "paths": {
+      "@/components/*": ["./src/components/*"],
+      "@/common/*": ["./src/common/*"],
+      "@/api/*": ["./src/api/*"],
+      "@/model/*": ["./src/model/*"],
+      "@/actions/*": ["./src/actions/*"],
+      "@/constants/*": ["./src/constants/*"],
+      "@/reducers/*": ["./src/reducers/*"],
+      "@/store/*": ["./src/store/*"],
+      "@/assets/*": ["./src/assets/*"],
+      "@/css/*": ["./src/css/*"],
+      "@/package": ["./package.json"],
+      "@/project": ["./project.swan.json"],
+      "@/typings/*": ["./typings/*"],
+      "@/mock/*": ["./mock/*"],
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "compileOnSave": false
+}
