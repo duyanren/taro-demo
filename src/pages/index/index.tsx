@@ -71,7 +71,9 @@ class Index extends Component {
 
   componentWillUnmount() {}
 
-  componentDidShow() {}
+  componentDidShow() {
+    const a = 1
+  }
 
   componentDidHide() {}
 
