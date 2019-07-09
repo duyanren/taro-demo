@@ -1,4 +1,4 @@
-# taro小程序
+# taro 小程序
 
 ## Taro 开发注意事项
 
@@ -104,4 +104,68 @@
 │       └── index.ts
 ├── tsconfig.json
 └── yarn.lock
+```
+
+## Git Commit 规范
+
+## 安装 commitizen 后，进行初始化
+
+```bash
+npm install -g commitizen or yarn global add commitizen
+commitizen init cz-conventional-changelog --save-dev --save-exact
+```
+
+## 格式校验工具 commitlint
+
+```bash
+yarn add @commitlint/{config-conventional,cli} --dev
+```
+
+同时需要在项目目录下创建配置文件 .commitlintrc.js
+
+```bash
+module.exports = {
+  extends: ['@commitlint/config-conventional'],
+  rules: {},
+};
+
+```
+
+安装 husky
+
+```bash
+yarn add husky@next -D
+```
+
+## 配置 package.json
+
+```bash
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+```
+
+## 生成 Changelog 工具 Conventional Changelog
+
+```bash
+yarn add standard-version --dev
+```
+
+然后配置 package.json 配置执行的脚本
+
+```bash
+{
+  "scripts": {
+    "release": "standard-version"
+  }
+}
 ```
